@@ -52,7 +52,7 @@ function displayQuote(quote) {
     const quoteAuthorElement = document.getElementById('quote-author');
 
     quoteTextElement.textContent = quote.text || 'No quote found';
-    quoteAuthorElement.textContent = quote.author || 'Unknown';
+    quoteAuthorElement.textContent = `- ${quote.author}` || 'Unknown';
 }
 
 // Initial load
