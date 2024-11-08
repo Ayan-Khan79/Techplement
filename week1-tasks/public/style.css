@@ -9,22 +9,24 @@ body {
     background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
     background-size: cover;
     color: #333;
+    overflow: hidden;
 }
 
 /* Container */
 .container {
     text-align: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent */
+    background: rgba(255, 255, 255, 0.85); /* Increased opacity */
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d0d0ff; /* Light border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.04);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
 }
 
 /* Heading */
@@ -57,16 +59,30 @@ h1:hover::after {
 
 /* Quote Text */
 #quote-text {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-style: italic;
     margin: 20px 0;
     color: #555;
+    transition: transform 0.3s ease;
+}
+
+#quote-text:hover {
+    transform: scale(1.02);
+    color: #333;
+}
+
+/* Quote Icons */
+.fa-quote-left, .fa-quote-right {
+    color: #6C63FF;
+    font-size: 1.3em;
 }
 
 /* Quote Author */
 #quote-author {
     font-size: 1.2em;
     color: #888;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 /* Input Field */
@@ -79,17 +95,17 @@ h1:hover::after {
     width: 80%;
     max-width: 300px;
     margin: 10px 0;
-    transition: border 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 #author-search:focus {
     border-color: #6C63FF;
+    box-shadow: 0px 0px 8px rgba(108, 99, 255, 0.4);
 }
 
 /* Buttons */
 button {
-    background-color: #6C63FF;
-    color: #FFF;
+    background: linear-gradient(135deg, #6C63FF, #a29bfe); 
     padding: 10px 20px;
     margin: 10px 5px;
     border: none;
@@ -100,14 +116,25 @@ button {
 }
 
 button:hover {
-    background-color: #5851DB;
+    background: linear-gradient(135deg, #5851DB, #8675ff);
     transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(88, 81, 219, 0.4);
+    box-shadow: 0px 4px 10px rgba(88, 81, 219, 0.5);
 }
 
 button:active {
     transform: scale(0.95);
-    box-shadow: 0px 2px 4px rgba(88, 81, 219, 0.3);
+    box-shadow: 0px 2px 6px rgba(88, 81, 219, 0.4);
+}
+
+button:focus {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
 }
 
 /* Responsive Design */
